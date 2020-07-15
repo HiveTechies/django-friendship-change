@@ -5,18 +5,7 @@
 <a class="btn btn-dark shadow mr-4" href="{% url 'friendship_view_friends' request.user %}">View Friends</a>
 <a class="btn btn-light shadow mr-4" href="{% url 'friendship_request_list' %}">Request List</a>
 <a class="btn btn-light shadow mr-4" href="{% url 'friendship_requests_rejected' %}">Rejected Requests</a>
-<a class="btn btn-light shadow mr-4" href="{% url 'friendship_followers' request.user %}">Followers</a>
-<a class="btn btn-light shadow mr-4" href="{% url 'friendship_following' request.user %}">Following</a>
 </div>
-{% if user_filter %}
-<form method='GET' class="form-inline my-2 my-lg-0">
-    {% bootstrap_form user_filter.form %}
-    <button class="btn btn-success shadow">Search</button>
-</form>
-{% endif %}
-{% for user in users %}
-{{user.username}}
-{% endfor %}
 {% endblock content %}
 
 {% block friends %}
